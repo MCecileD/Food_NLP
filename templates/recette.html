@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recette</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Photo</th>
+                <th>Ingredients</th>
+                <th>Instructions</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+                <td>{{ recette[2] }}</td>
+                <td class="photo"><img src="https://storage.googleapis.com/foodnlp/{{ recette[5] }}.jpg" alt="photo"></td>
+                <td id="id_ing">{{ recette[3] }}</td>
+                <td id="id_ing">{{ recette[4] }}</td>
+            </tr>
+        
+        </tbody>
+    </table>
+</body>
+</html>

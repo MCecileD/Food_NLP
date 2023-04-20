@@ -1,8 +1,15 @@
 <html>
 <head>
     <title>Page d'accueil</title>
+    
 </head>
 <body>
-  <h1>Welcome to the super site Food NLP! Et voilou la modification de paméla</h1>
+  <h1 >Welcome to the super site Food NLP! Et voilou la modification de paméla</h1>
+  <form action="{{ url_for('result') }}" method="post">
+    <label for="value">Value:</label>
+    <input type="text" name="value" id="value">
+    <button type="submit">Translate</button>
+  </form>
+
 </body>
 </html>
