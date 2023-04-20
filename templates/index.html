@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Page d'accueil</title>
+
 	<style>
 		body {
 			background-color: burlywood;
@@ -51,7 +58,8 @@
 
   <div class="title">
     <h1>Welcome !</h1>
-  </div>
+
+   </div>
 
   <p> Please tell me how you feel, I will tell you what to eat !</p>
 
@@ -60,16 +68,34 @@
     <div style="float:left" width=100px class="image">
       <img width=180px src="https://storage.googleapis.com/images_foodnlp/food.jpg">
     </div>
-
-	  <div class=“container”>
-      <a href="recettes.html"><img width=200px src="https://storage.googleapis.com/images_foodnlp/joy.jpg" ></a>
-      <a href="recettes.html"><img width=200pw src="https://storage.googleapis.com/images_foodnlp/sad.jpg" ></a>
-      <a href="recettes.html"><img width=200px src="https://storage.googleapis.com/images_foodnlp/fear.jpg" ></a>
-      <a href="recettes.html"><img width=200px src="https://storage.googleapis.com/images_foodnlp/anger.jpg" ></a>	
-	  </div>
-
-	</div> 
-
+  <form action="{{ url_for('result') }}" method="POST" style="float: left;">
+    <label for="values">Your Emotions is :</label>
+      <select name="emotions" id="emotions">
+        <option value="Frustration">Frustration</option>
+        <option value="Angry">Angry</option>
+        <option value="Threatened">Threatened</option>
+        <option value="Hurt">Hurt</option>
+        <option value="Optimistic">Optimistic</option>
+        <option value="Calm">Calm</option>
+        <option value="Proud">Proud</option>
+        <option value="Happy">Happy</option>
+        <option value="Anxiety">Anxiety</option>
+        <option value="Humiliated">Humiliated</option>
+        <option value="Apprehension">Apprehension</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Disapointement">Disapointement</option>
+        <option value="Helpless">Helpless</option>
+        <option value="Lost">Lost</option>
+        <option value="Depressed">Depressed</option>
+      </select>
+      <input type="submit" value="Submit" />
+    <div class=“container”>
+        <a href="#" onclick="document.querySelector('#emotions').value='Happy'; document.querySelector('form').submit();"><img width=400px src="https://storage.googleapis.com/images_foodnlp/joy.jpg" class="right-image"></a>
+        <a href="#" onclick="document.querySelector('#emotions').value='Depressed'; document.querySelector('form').submit();"><img width=400px src="https://storage.googleapis.com/images_foodnlp/sad.jpg" class="right-image"></a>
+        <a href="#" onclick="document.querySelector('#emotions').value='Apprehension'; document.querySelector('form').submit();"><img width=400px src="https://storage.googleapis.com/images_foodnlp/fear.jpg" class="right-image"></a>
+        <a href="#" onclick="document.querySelector('#emotions').value='Angry'; document.querySelector('form').submit();"><img width=400px src="https://storage.googleapis.com/images_foodnlp/anger.jpg" class="right-image"></a>    
+    </div> 
+  </div>
 </body>
 
 </html>
