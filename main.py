@@ -33,9 +33,9 @@ pool = sqlalchemy.create_engine(
 def index():
     return render_template('index.html')
 
-@app.route('/result', methods=['POST'])
+@app.route('/result')
 def result():
-    value = request.form['value']
+    value = request.args.get('value')
 
     with pool.connect() as db_conn:
         query = "SELECT * FROM emotions_labels7 WHERE emotions = :value"
