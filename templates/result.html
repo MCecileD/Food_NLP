@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Résultats</title>
+    <title>Your recipes</title>
 </head>
 <body>
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Photo</th>
+                <th>Here is the list of recipes for your emotion "{{ result[0][1] }}" so your need may be "{{ result[0][2] }}"</th>
+                
             </tr>
         </thead>
         <tbody>
         
             <tr>
-                <td>Résultats de votre émotion "{{ result[0][1] }}" dont votre besoin est "{{ result[0][2] }}"</td>
+                
             {% for row in result[2] %}
-                <td>Voici la liste des recettes : "{{ row[2] }}"</td>
-                <td class="photo"><a href="{{ url_for('recette', row_id=row[0]) }}"><img src="https://storage.googleapis.com/foodnlp/{{ row[5] }}.jpg" alt="photo"></a></td>
+                <td class="photo"><a href="{{ url_for('recette', row_id=row[0]) }}"><img src="https://storage.googleapis.com/foodnlp/{{ row[5] }}.jpg" alt="photo">"{{ row[2] }}"</a></td>
                 
             </tr>
             {% endfor %}
+            <a href="{{ url_for('index') }}">Back to Emotions list</a>
         </tbody>
     </table>
 </body>

@@ -33,13 +33,13 @@ pool = sqlalchemy.create_engine(
 def index():
     return render_template('index.html')
 
-@app.route('/result')
+@app.route('/result', methods=['POST'])
 def result():
-    value = request.args.get('value')
-
+    values = request.args.get('value')
+    valued = request.form['emotions']
     with pool.connect() as db_conn:
-        query = "SELECT * FROM emotions_labels7 WHERE emotions = :value"
-        result = db_conn.execute(sqlalchemy.text(query), value=value).fetchone()
+        query = "SELECT * FROM emotions_labels7 WHERE emotions = :valued or emotions = :values"
+        result = db_conn.execute(sqlalchemy.text(query), valued=valued, values=values).fetchone()
         new_label = result[2] 
         query_titre = "SELECT title FROM zeroshotresult8 WHERE labels = :new_label"
         result_title = db_conn.execute(sqlalchemy.text(query_titre),new_label=new_label).fetchall()
