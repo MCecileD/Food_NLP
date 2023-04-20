@@ -4,21 +4,70 @@
 
 <head>
     <title>Page d'accueil</title>
+
+	<style>
+		body {
+			background-color: burlywood;
+			color: white;
+		}
+		.grid-container {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			grid-gap: 10px;
+			margin-right: 0px;
+			margin-left: auto;
+		}
+		.grid-item {
+			border: 1px solid white;
+			padding: 20px;
+			text-align: center;
+			font-size: 20px;
+			background-color: white;
+			color: burlywood;
+		}
+		.image {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin-right: 0px;
+			margin-left: auto;
+		}
+		.row-1 {
+			grid-row: 1 / span 1;
+		}
+		.row-2 {
+			grid-row: 2 / span 1;
+		}
+		.col-1 {
+			grid-column: 1 / span 1;
+		}
+		.col-2 {
+			grid-column: 2 / span 1;
+
+		}
+		.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+	</style>
 </head>
 
 <body>
 
   <div class="title">
     <h1>Welcome !</h1>
-    </div>
+
+   </div>
 
   <p> Please tell me how you feel, I will tell you what to eat !</p>
 
-  <div style="display: inline-block;" class="container">
+  <div style="float:left; width:100%;" class="container">
 		
-	<div class="image">
-			<img src="https://storage.googleapis.com/images_foodnlp/food.jpg" class="left-image">
-	</div>
+    <div style="float:left" width=100px class="image">
+      <img width=180px src="https://storage.googleapis.com/images_foodnlp/food.jpg">
+    </div>
   <form action="{{ url_for('result') }}" method="POST" style="float: left;">
     <label for="values">Your Emotions is :</label>
       <select name="emotions" id="emotions">
@@ -40,13 +89,13 @@
         <option value="Depressed">Depressed</option>
       </select>
       <input type="submit" value="Submit" />
-    <div style="float:right" class="block">
+    <div class=“container”>
         <a href="#" onclick="document.querySelector('#emotions').value='Happy'; document.querySelector('form').submit();"><img width=400px src="https://storage.googleapis.com/images_foodnlp/joy.jpg" class="right-image"></a>
         <a href="#" onclick="document.querySelector('#emotions').value='Depressed'; document.querySelector('form').submit();"><img width=400px src="https://storage.googleapis.com/images_foodnlp/sad.jpg" class="right-image"></a>
         <a href="#" onclick="document.querySelector('#emotions').value='Apprehension'; document.querySelector('form').submit();"><img width=400px src="https://storage.googleapis.com/images_foodnlp/fear.jpg" class="right-image"></a>
         <a href="#" onclick="document.querySelector('#emotions').value='Angry'; document.querySelector('form').submit();"><img width=400px src="https://storage.googleapis.com/images_foodnlp/anger.jpg" class="right-image"></a>    
     </div> 
-
+  </div>
 </body>
 
 </html>

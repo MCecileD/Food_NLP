@@ -1,0 +1,15 @@
+/* Change la couleur du texte en rouge */
+body {
+	color: whitesmoke;
+}
+
+/* Change la taille et la couleur du titre */
+title {
+	font-size: 36px;
+	color: whitesmoke;
+}
+
+/* Change la couleur de fond de la page */
+body {
+	background-color: burlywood;
+}
