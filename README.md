@@ -1,3 +1,5 @@
+Avant test de la connexion depuis son terminal vers github :
+ssh -T git@github.com
 # Clone the repository
 ## to do once :
 
